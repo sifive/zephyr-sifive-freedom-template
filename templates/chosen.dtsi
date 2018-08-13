@@ -1,0 +1,9 @@
+/ {
+    chosen {
+        zephyr,console = &<UART_DEV_NAME>;
+    };
+};
+
+&uart0 {
+    current-speed = <115200>;
+};

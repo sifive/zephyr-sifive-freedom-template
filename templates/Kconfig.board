@@ -1,0 +1,4 @@
+config BOARD_<BOARD_IDENTIFIER>
+	bool "<BOARD_NAME>"
+	depends on SOC_RISCV32_FE310
+	select HAS_DTS

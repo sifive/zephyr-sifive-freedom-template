@@ -1,0 +1,9 @@
+if BOARD_<BOARD_IDENTIFIER>
+
+config BOARD
+	default "<BOARD_NAME>"
+
+config RISCV_ROM_BASE_ADDR
+	default <ROM_BASE_ADDR> 
+
+endif

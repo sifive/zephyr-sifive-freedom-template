@@ -1,0 +1,6 @@
+identifier: <BOARD_NAME>
+name: SiFive E-Series
+type: mcu
+arch: riscv32
+toolchain:
+  - zephyr
