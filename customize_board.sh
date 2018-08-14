@@ -22,15 +22,15 @@ fi
 DTS_FILENAME=${BOARD_NAME}.dts
 DTB_FILENAME=${BOARD_NAME}.dtb
 
+# Find first defined serial device in the DTS and use it to set the chosen UART
+UART_DEV_NAME=`cat ${DTS_FILENAME} | python3 -c "import re, sys ; m = re.search('\s*(.*):\s*serial.*{', sys.stdin.read()) ; print(m.groups(0)[0])"`
+
 # Getting Boot ROM Address
 read -p "Do you want to boot from the default boot address 0x2040_0000? (Y/n): " DEFAULT_BASE_ADDR
 case $DEFAULT_BASE_ADDR in
     [Nn]* ) read -p "Enter ROM boot address in hex (ex. 0x20000000, 0x20400000): " ROM_BASE_ADDR;;
     * ) ROM_BASE_ADDR="0x20400000";;
 esac
-
-# Chosing UART0 Device
-UART_DEV_NAME="uart0"
 
 # Copy and autofill template files
 RENAME_FILES=("board_name.yaml" "board_name_defconfig")
