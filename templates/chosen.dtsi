@@ -6,4 +6,5 @@
 
 &<UART_DEV_NAME> {
     current-speed = <115200>;
+    label = "uart0";
 };
